@@ -37,15 +37,40 @@ body {
 }
 
 .modal-body {
-    padding: 0px;
+    padding: 3px;
+    background: white;
+    border-radius: 3px;
 }
 
-.modal .modal-dialog,
+.modal .modal-dialog {
+    max-width: 280px;
+    width: 100%;
+}
+
 .modal img {
-    width: 280px;
+    width: 274px;
 }
 
 .modal-footer {
     border: none;
     background: transparent;
+}
+
+/*
+ * Overwrite Default 
+ * Nprogress Styles 
+ */
+
+#nprogress {
+  position: relative;
+  z-index: 9999999;
+}
+
+#nprogress .bar {
+    background-color: white;
+    height: 3px;
+}
+
+#nprogress .peg {
+    box-shadow: none;
 }

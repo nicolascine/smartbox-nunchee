@@ -1,13 +1,15 @@
 'use strict';
-
 var KUNGA_IMG = 'kunga1.png';
 var DIRECT_IMG = 'directtv1.png';
 var IMG_FOLDER = './assets/img/';
+var API_END_POINT = './login';
 var $appImg = $('.appsContainer img');
+var $form = $('#NuncheeModal form');
 
 /*
  * Modal Behavior
- */
+ * ---------------------------------------- */
+
 $appImg.on('click', function() {
     var appName = $(this).data('app');
     openNuncheeModal(appName);
@@ -24,24 +26,31 @@ var openNuncheeModal = function(appName) {
     $('#NuncheeModal').modal('show')
 }
 
-/*
- * AJAX Form 
- */
+$('#NuncheeModal').on('hidden.bs.modal', function () {
+    $form.find('input').each(function(){
+        $(this).val('');
+    })
+})
 
-var sendForm = function(){
+
+/*
+ * AJAX Request - Form
+ * ---------------------------------------- */
+ 
+$form.on('submit', function(e) {
+    e.preventDefault();
+    sendForm();
+});
+
+var sendForm = function() {
+    NProgress.start();
     $.ajax({
-        url: './login/',
-        type: 'POST',
-        data: {
-            'username': 'hola',
-            'passwor': 'hola'
-        },
-        dataType: 'json',
-        success: function(data) {
-            alert('Data: ' + data);
-        },
-        error: function(request, error) {
-            alert("Request: " + JSON.stringify(request));
+        type: "POST",
+        url: API_END_POINT,
+        data: $form.serialize(),
+        success: function(response) {
+            console.log(response);
+            NProgress.done();
         }
     });
 }

@@ -7,11 +7,45 @@ body {
     background-color: #e4ebf3;
 }
 
-.appsContainer img { 
-    cursor: pointer; 
+.appsContainer img {
+    cursor: pointer;
 }
 
 .secondSection {
     background-color: #4e92df;
 }
 
+.nuncheeForm button {
+    background-color: #4e92df;
+    border: none;
+    width: 100%;
+    color: white;
+    outline: 0;
+}
+
+
+/*
+ * Overwrite Default 
+ * Boostrap Modal Styles 
+ */
+
+.modal,
+.modal-content {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.modal-body {
+    padding: 0px;
+}
+
+.modal .modal-dialog,
+.modal img {
+    width: 280px;
+}
+
+.modal-footer {
+    border: none;
+    background: transparent;
+}

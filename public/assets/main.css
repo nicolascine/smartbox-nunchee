@@ -1,1 +1,16 @@
-main.css
+body {
+    font-family: Roboto;
+}
+
+.mainSection {
+    color: #838588;
+    background-color: #e4ebf3;
+}
+
+.secondSection {
+    background-color: #4e92df;
+}
+
+h1 {
+    color: white;
+}

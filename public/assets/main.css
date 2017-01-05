@@ -7,10 +7,11 @@ body {
     background-color: #e4ebf3;
 }
 
+.appsContainer img { 
+    cursor: pointer; 
+}
+
 .secondSection {
     background-color: #4e92df;
 }
 
-h1 {
-    color: white;
-}

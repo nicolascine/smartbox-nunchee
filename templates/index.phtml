@@ -18,7 +18,7 @@
             <p>Try <a href="http://www.slimframework.com">SlimFramework</a>
         <?php endif; ?> -->
 
-        <div class="conainer">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12 mainSection">
                     <img src="./assets/img/icon.png" alt="Logo Nunchee Interactive">
@@ -27,9 +27,11 @@
                 </div>
                 <div class="col-md-12 secondSection">
                     <h1>Nuestras Apps</h1>
-                    <img src="./assets/img/kunga.png" alt="Kunga">
-                    <img src="./assets/img/foto-middle.png" alt="Foto Middle" class="img-circle">
-                    <img src="./assets/img/directtv.png" alt="Direct TV">
+                    <div class="appsContainer">
+                        <img data-app="kunga" src="./assets/img/kunga.png" alt="Kunga">
+                        <img data-app="fotoMiddle" src="./assets/img/foto-middle.png" alt="Foto Middle" class="img-circle">
+                        <img data-app="directtv" src="./assets/img/directtv.png" alt="Direct TV">
+                    </div>
                 </div>
                 <div class="col-md-12">
                     <img src="./assets/img/parallax.jpg" alt="Parallax">
@@ -40,6 +42,32 @@
             </footer>
         </div>
 
-        <script type="text/javacript" src="./assets/custom_bootstrap_950w/js/bootstrap.min.js"></script>
+
+        <!-- Login Modal -->
+        <div class="modal fade" id="NuncheeModal" tabindex="-1" role="dialog" aria-labelledby="NuncheeModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img id="loginAppBrand" src="" alt="App logo">
+              </div>
+              <div class="modal-footer">
+                
+                <form>
+                  <div class="form-group">
+                    <input type="email" class="form-control" id="userNameInput" placeholder="Username">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-default">Enviar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="./assets/main.js"></script>
     </body>
 </html>

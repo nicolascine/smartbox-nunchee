@@ -5,6 +5,11 @@ var DIRECT_IMG = 'directtv1.png';
 var IMG_FOLDER = './assets/img/';
 var $appImg = $('.appsContainer img');
 
+
+/*
+ * Modal Behavior
+ */
+
 $appImg.on('click', function() {
     var appName = $(this).data('app');
     openNuncheeModal(appName);
@@ -20,3 +25,7 @@ var openNuncheeModal = function(appName) {
     $('#loginAppBrand').attr('src', IMG_FOLDER + appLogo);
     $('#NuncheeModal').modal('show')
 }
+
+/*
+ * AJAX Form 
+ */

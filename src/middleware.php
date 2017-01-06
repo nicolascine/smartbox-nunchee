@@ -7,13 +7,19 @@ $END_POINT = $container->get('settings')['API_ENDPOINT']['url'];
  * Application middleware
  * -------------------------------------------- */ 
 $sendRequest = function ($request, $response, $next) {
+
     $loginParams = $request->getParsedBody();
     $fields = array(
         'username' => urlencode($loginParams['username']),
         'password' => urlencode($loginParams['password'])
     );
+
     $responseArray = _curlRequest($fields);
     $response->getBody()->write($responseArray);
+
+    //Log with params
+    $logString = 'username: ' . $loginParams['username'] . ', response ' . (string)$response;
+    $this->logger->info("'/login' route, $logString");
 
     return $response;
 };

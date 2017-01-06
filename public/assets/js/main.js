@@ -13,6 +13,11 @@ var $appImg = $('.appsContainer img');
 var $form = $('#NuncheeModal form');
 
 
+//Set LocalStorage Item
+if (localStorage.getItem('error_logs') === null) {
+    localStorage.setItem('error_logs', JSON.stringify([]));
+}
+
 /*
  * Modal Behavior
  * ---------------------------------------- */
@@ -47,6 +52,7 @@ $form.on('submit', function(e) {
 
 var sendForm = function() {
     NProgress.start();
+    var date = new Date();
     $.ajax({
         type: "POST",
         url: API_END_POINT,
@@ -54,6 +60,7 @@ var sendForm = function() {
         success: function(response) {
             displayResponse(response);
             NProgress.done();
+            setStorageData(date, $form.serialize(), response)
         }
     });
 }
@@ -91,4 +98,13 @@ var getErrorMsg = function(code) {
             break;
     }
     return msg;
+}
+
+//LocalStorage
+
+var setStorageData = function(date, params, response) {
+    var logs = JSON.parse(localStorage.getItem('error_logs'));
+    var newLog = {'date': date, 'params': params, 'response': response};
+    logs.push(newLog);
+    localStorage.setItem('error_logs', JSON.stringify(logs));
 }

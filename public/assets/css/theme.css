@@ -1,32 +1,20 @@
 body {
+    font-size: 13px;
     font-family: Roboto;
 }
 
-.mainSection {
-    color: #838588;
-    background-color: #e4ebf3;
-}
+/*
+ * Overwrite Default Bootstrap grid with */
 
-.appsContainer img {
-    cursor: pointer;
-}
-
-.secondSection {
-    background-color: #4e92df;
-}
-
-.nuncheeForm button {
-    background-color: #4e92df;
-    border: none;
-    width: 100%;
-    color: white;
-    outline: 0;
+@media (min-width: 1200px){
+    .container {
+        width: 950px;
+    }    
 }
 
 
 /*
- * Overwrite Default 
- * Boostrap Modal Styles 
+ * Overwrite Default Boostrap Modal Styles 
  */
 
 .modal,
@@ -56,14 +44,13 @@ body {
     background: transparent;
 }
 
+
 /*
- * Overwrite Default 
- * Nprogress Styles 
- */
+ * Overwrite Default Nprogress Styles */
 
 #nprogress {
-  position: relative;
-  z-index: 9999999;
+    position: relative;
+    z-index: 9999999;
 }
 
 #nprogress .bar {
@@ -73,4 +60,9 @@ body {
 
 #nprogress .peg {
     box-shadow: none;
+}
+
+#nprogress .spinner-icon {
+    border-top-color: white;
+    border-left-color: white;
 }

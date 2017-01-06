@@ -11,7 +11,6 @@ if (PHP_SAPI == 'cli-server') {
 
 require __DIR__ . '/../vendor/autoload.php';
 
-ini_set('display_errors','off');
 session_start();
 
 // Instantiate the app

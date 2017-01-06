@@ -14,6 +14,9 @@ return [
             'name' => 'slim-app',
             'path' => __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
+        ],
+        'API_ENDPOINT' => [
+            'url' => 'http://test-web.nunchee.com/nunchee/api/1.0/users/login_frontend'
         ]
     ],
 ];

@@ -80,8 +80,3 @@ body {
     border-top-color: white;
     border-left-color: white;
 }
-
-.jq-toast-wrap.bottom-left {
-    top: 20px;
-    right: 20px;
-}

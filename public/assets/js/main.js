@@ -12,6 +12,7 @@ var API_END_POINT = './login';
 var $appImg = $('.appsContainer img');
 var $form = $('#NuncheeModal form');
 
+
 /*
  * Modal Behavior
  * ---------------------------------------- */
@@ -31,19 +32,19 @@ var openNuncheeModal = function(appName) {
     $('#NuncheeModal').modal('show')
 }
 $('#NuncheeModal').on('hidden.bs.modal', function() {
-        $form.find('input').each(function() {
-            $(this).val('');
-        })
+    $form.find('input').each(function() {
+        $(this).val('');
     })
+})
 
 /*
  * AJAX Request - Form
  * ---------------------------------------- */
-
 $form.on('submit', function(e) {
     e.preventDefault();
     sendForm();
 });
+
 var sendForm = function() {
     NProgress.start();
     $.ajax({
@@ -56,24 +57,20 @@ var sendForm = function() {
         }
     });
 }
+
 var displayResponse = function(response) {
-
     var obj = JSON && JSON.parse(response) || $.parseJSON(response);
+    var HTTP_CODE = parseInt(obj.code);
+    var message = obj.code === 503 ? 'Datos incorrectos :(' : getErrorMsg(HTTP_CODE);
 
-    console.log("response ====>")
-    console.log(obj)
-    console.log(obj.http_code)
-
-    return false;
-
-    var HTTP_CODE = parseInt(response.http_code)
-    alert(HTTP_CODE);
-
+    //Send notification to user
     $.toast({
-        text: getErrorMsg(HTTP_CODE),
-        hideAfter: false
+        text: message,
+        hideAfter: 3500,
+        position : 'top-right'
     })
 }
+
 var getErrorMsg = function(code) {
     var msg = '';
     switch (code) {
@@ -91,9 +88,6 @@ var getErrorMsg = function(code) {
             break;
         case 502:
             msg = "Colapso del servidor";
-            break;
-        case 503:
-            msg = "Datos incorrectos :( ";
             break;
     }
     return msg;

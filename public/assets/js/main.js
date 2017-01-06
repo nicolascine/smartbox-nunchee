@@ -3,10 +3,10 @@
 //Assets vars
 var KUNGA_IMG = 'kunga1.png';
 var DIRECT_IMG = 'directtv1.png';
-var IMG_FOLDER = './assets/img/';
+var IMG_FOLDER = 'assets/img/';
 
 //API End Point
-var API_END_POINT = './login';
+var API_END_POINT = 'login';
 
 //Selectors
 var $appImg = $('.apps-container .app > img');
@@ -19,7 +19,7 @@ if (localStorage.getItem('error_logs') === null) {
 }
 
 /*
- * Modal Behavior
+ * Login window behavior
  * ---------------------------------------- */
 
 $appImg.on('click', function() {

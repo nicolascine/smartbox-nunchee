@@ -25,12 +25,11 @@ $sendRequest = function ($request, $response, $next) {
     $remote_server_output = curl_exec ($ch);
     $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-
-    //Set response array
-    $response_array = [];
-    $response_array['http_code'] = $httpcode;
-    $response_array['response'] = $remote_server_output;
-    $response_array = stripslashes(json_encode($response_array));
+    
+    //Add HTTP Status code to array
+    $obj = json_decode($remote_server_output, true);
+    $obj['code'] = $httpcode;
+    $response_array = stripslashes(json_encode($obj));
 
     $response->getBody()->write($response_array);
     return $response;

@@ -1,3 +1,7 @@
+/*
+ * Main Section
+ * ------------------------- */
+
 .main-section {
     color: #838588;
     padding: 40px 0px;
@@ -15,7 +19,7 @@
 }
 
 .second-section {
-    padding: 45px 0px 74px 0px;
+    padding: 45px 0px 45px 0px;
     background-color: rgba(78, 146, 223, 1);
 }
 
@@ -36,6 +40,7 @@
 .apps-container .app img {
     cursor: pointer;
     border-radius: 3px;
+    width: 100%;
 }
 
 .apps-container .app span {
@@ -52,20 +57,6 @@
     border-radius: 0px 0px 3px 3px;
 }
 
-footer {
-    padding: 10px 0px;
-    text-align: center;
-    background-color: rgba(78, 146, 223, 1);
-}
-
-.nunchee-form button {
-    background-color: rgba(78, 146, 223, 1);
-    border: none;
-    width: 100%;
-    color: white;
-    outline: 0;
-}
-
 .parallax {
     background-image: url("../img/parallax.jpg");
     height: 340px;
@@ -73,4 +64,28 @@ footer {
     background-position: center 200px;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+/*
+ * Footer
+ * ------------------------- */
+
+footer {
+    padding: 10px 0px;
+    text-align: center;
+    background-color: rgba(78, 146, 223, 1);
+}
+
+
+/*
+ * Modal - Form
+ * ------------------------- */
+
+.nunchee-form button {
+    background-color: rgba(78, 146, 223, 1);
+    border: none;
+    width: 100%;
+    color: white;
+    outline: 0;
 }

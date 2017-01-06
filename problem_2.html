@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pregunta 2</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #eee;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="file" id="upload" style="display: none;">
+    </div>
+    <script>
+
+        /* PROBLEMA 
+        ----------------------------------------------  
+        function functionClickInput(){
+            document.getElementById("upload").click();
+            console.log("click...")
+        };
+        document.getElementById("box").addEventListener("click", functionClickInput); */
+
+
+        /* SOLUCION
+        ---------------------------------------------- */
+        var stateCounter = 0;
+        function functionClickInput(){
+            stateCounter++;
+            if(stateCounter === 1){
+                document.getElementById("upload").click();
+                stateCounter = 0;
+            } else {
+                return false;
+            }
+            console.log("click...")
+        };
+        document.getElementById("box").addEventListener("click", functionClickInput);
+
+    </script>
+
+</body>
+</html>

@@ -1,21 +1,35 @@
-body {
-    font-family: Roboto;
-}
-
-.mainSection {
+.main-section {
     color: #838588;
-    background-color: #e4ebf3;
+    padding: 40px 0px;
+    background-color: rgba(78, 146, 223, .2);
 }
 
-.appsContainer img {
+.main-section img {
+    display: block;
+    margin: 0px auto 15px auto;
+}
+
+.main-section p {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.second-section {
+    background-color: rgba(78, 146, 223, 1);
+}
+
+.second-section h1 {
+    color: white;
+    text-align: left;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+
+.apps-container img {
     cursor: pointer;
 }
 
-.secondSection {
-    background-color: #4e92df;
-}
-
-.nuncheeForm button {
+.nunchee-form button {
     background-color: #4e92df;
     border: none;
     width: 100%;
@@ -30,61 +44,4 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-/*
- * Overwrite Default 
- * Boostrap Modal Styles 
- */
-
-.modal,
-.modal-content {
-    background: transparent;
-    box-shadow: none;
-    border: none;
-}
-
-.modal-body {
-    padding: 3px;
-    background: white;
-    border-radius: 3px;
-}
-
-.modal .modal-dialog {
-    max-width: 280px;
-    width: 100%;
-}
-
-.modal img {
-    width: 274px;
-}
-
-.modal-footer {
-    border: none;
-    background: transparent;
-}
-
-
-/*
- * Overwrite Default 
- * Nprogress Styles 
- */
-
-#nprogress {
-    position: relative;
-    z-index: 9999999;
-}
-
-#nprogress .bar {
-    background-color: white;
-    height: 3px;
-}
-
-#nprogress .peg {
-    box-shadow: none;
-}
-
-#nprogress .spinner-icon {
-    border-top-color: white;
-    border-left-color: white;
 }

@@ -1,26 +1,43 @@
-# Slim Framework 3 Skeleton Application
+# Test Nunchee
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+This app use PHP (cURL) and JS (jQuery) to send request to login endpoint and displays the response of server
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+### Test Stack
 
-## Install the Application
+    - SLIM PHP 3.0
+    - JS / jQuery
+    - Bootstrap 3
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+### System Requirements
+    - PHP
+    - Composer
+    
+### Installation
+After cloning this repo, run:
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+    $ cd test-tecnico
+    $ composer install
 
 Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
 
 * Point your virtual host document root to your new application's `public/` directory.
 * Ensure `logs/` is web writeable.
 
-To run the application in development, you can also run this command. 
+To run the application in development, you can also run this command:
 
-	php composer.phar start
+    $ composer start
 
-Run this command to run the test suite
+Or direct with PHP:
 
-	php composer.phar test
+    $ php -S 0.0.0.0:8080 -t public public/index.php
 
-That's it! Now go build something cool.
+If you prefer, run this project on your own PHP environment and open this url:
+
+    http://localhost/public/index.php
+
+Wehe `http://localhost/` is your developmnet server (maybe with some port, etc)
+
+### Loggin
+All requests are saved in a log file, the directory is:
+
+    /logs

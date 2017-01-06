@@ -11,10 +11,10 @@ if (PHP_SAPI == 'cli-server') {
 
 require __DIR__ . '/../vendor/autoload.php';
 
-ini_set('display_errors','off');
 session_start();
 
 // Instantiate the app
+date_default_timezone_set('America/Santiago');
 $settings = require __DIR__ . '/../src/settings.php';
 $app = new \Slim\App($settings);
 

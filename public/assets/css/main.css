@@ -15,33 +15,62 @@
 }
 
 .second-section {
+    padding: 45px 0px 74px 0px;
     background-color: rgba(78, 146, 223, 1);
 }
 
 .second-section h1 {
     color: white;
     text-align: left;
-    font-size: 1.6em;
-    font-weight: 300;
+    font-size: 1.8em;
+    font-weight: 100;
+    padding: 0px 5px;
+    margin-bottom: 39px;
 }
 
-.apps-container img {
+.apps-container .app {
+    border-radius: 3px;
+    position: relative;
+}
+
+.apps-container .app img {
     cursor: pointer;
+    border-radius: 3px;
+}
+
+.apps-container .app span {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    height: 30px;
+    color: #4e4e4e;
+    text-align: left;
+    padding: 0px 10px;
+    line-height: 30px;
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 0px 0px 3px 3px;
+}
+
+footer {
+    padding: 10px 0px;
+    text-align: center;
+    background-color: rgba(78, 146, 223, 1);
 }
 
 .nunchee-form button {
-    background-color: #4e92df;
+    background-color: rgba(78, 146, 223, 1);
     border: none;
     width: 100%;
     color: white;
     outline: 0;
 }
 
-.parallax { 
+.parallax {
     background-image: url("../img/parallax.jpg");
-    height: 500px; 
+    height: 340px;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center 200px;
     background-repeat: no-repeat;
     background-size: cover;
 }

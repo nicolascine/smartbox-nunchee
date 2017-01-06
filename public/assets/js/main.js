@@ -9,8 +9,8 @@ var IMG_FOLDER = './assets/img/';
 var API_END_POINT = './login';
 
 //Selectors
-var $appImg = $('.appsContainer img');
-var $form = $('#NuncheeModal form');
+var $appImg = $('.apps-container .app > img');
+var $form = $('#nunchee-modal form');
 
 
 //Set LocalStorage Item
@@ -26,6 +26,7 @@ $appImg.on('click', function() {
     var appName = $(this).data('app');
     openNuncheeModal(appName);
 });
+
 var openNuncheeModal = function(appName) {
     var appLogo = null;
     if (appName === 'directtv') {
@@ -33,10 +34,11 @@ var openNuncheeModal = function(appName) {
     } else if (appName === 'kunga') {
         appLogo = KUNGA_IMG;
     }
-    $('#loginAppBrand').attr('src', IMG_FOLDER + appLogo);
-    $('#NuncheeModal').modal('show')
+    $('#login-app-brand').attr('src', IMG_FOLDER + appLogo);
+    $('#nunchee-modal').modal('show')
 }
-$('#NuncheeModal').on('hidden.bs.modal', function() {
+
+$('#nunchee-modal').on('hidden.bs.modal', function() {
     $form.find('input').each(function() {
         $(this).val('');
     })
@@ -45,6 +47,7 @@ $('#NuncheeModal').on('hidden.bs.modal', function() {
 /*
  * AJAX Request - Form
  * ---------------------------------------- */
+
 $form.on('submit', function(e) {
     e.preventDefault();
     sendForm();
@@ -100,8 +103,7 @@ var getErrorMsg = function(code) {
     return msg;
 }
 
-//LocalStorage
-
+//LocalStorage Data
 var setStorageData = function(date, params, response) {
     var logs = JSON.parse(localStorage.getItem('error_logs'));
     var newLog = {'date': date, 'params': params, 'response': response};

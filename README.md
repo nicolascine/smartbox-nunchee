@@ -33,6 +33,8 @@ Or direct with PHP:
 
     $ php -S 0.0.0.0:8080 -t public public/index.php
 
+And open `http://0.0.0.0:8080`
+
 If you prefer, run this project on your own PHP environment and open this url:
 
     http://localhost/public/index.php
